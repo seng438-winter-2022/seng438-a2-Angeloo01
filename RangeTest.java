@@ -75,11 +75,11 @@ public class RangeTest {
     }
     
     @Test
-    public void intersectsShouldBeFalseAEqualUpper() {
+    public void intersectsShouldBeTrueAEqualUpper() {
         //fail("Not yet implemented");
     	Range exampleRange2 = new Range(1, 2);
     	
-    	assertFalse(exampleRange.intersects(exampleRange2));
+    	assertTrue(exampleRange.intersects(exampleRange2));
     }
 //    
     @Test(expected = IllegalArgumentException.class)
