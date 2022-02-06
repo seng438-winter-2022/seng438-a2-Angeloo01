@@ -21,22 +21,22 @@ To apply these testing methods, we are going to implement unit tests using JUnit
 
 The functions we chose to test from the Range class are and their equvalence classes:
  - getLength()
-  - Range object with valid doubles as bounds.
+   - Range object with valid doubles as bounds.
   
  - getLowerBound()
-  - Range object with valid doubles as bounds.
+   - Range object with valid doubles as bounds.
   
  - getUpperBound()
-  - Range object with valid doubles as bounds.
+   - Range object with valid doubles as bounds.
   
  - intersects(double a, double b)
-  - Range object with valid doubles as bounds.
-  - a < lower bound, lower bound <= a <= upper bound, a > upper bound
-  - b < lower bound, lower bound <= b <= upper bound, b > upper bound
+   - Range object with valid doubles as bounds.
+   - a < lower bound, lower bound <= a <= upper bound, a > upper bound
+   - b < lower bound, lower bound <= b <= upper bound, b > upper bound
   
  - Range(double a, double b)
-  - a < b
-  - a >= b
+   - a < b
+   - a >= b
 
 # 3 Test cases developed
 
