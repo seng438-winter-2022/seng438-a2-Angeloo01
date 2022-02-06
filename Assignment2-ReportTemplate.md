@@ -11,7 +11,7 @@
 
 # 1 Introduction
 
-Text…
+The purpose of this lab is to intorduce us to the concepts of automated unit testing. In this lab we will be tasked with creating unit test using the primary testing tool in Java, being the JUnit framework. We will be using the JUnit framework, to test the system JFreeChart. In order to test the system, units tests will be created based in requirements found in the Javadocs for the JFreeChart software. Certain aspects of the JFreeChart system that we will be testing, will require the development and use of mock objects in order to simulate features of objects that are hard to reproduce in our unit tests.
 
 # 2 Detailed description of unit test strategy
 
