@@ -2,12 +2,12 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:      |     |
-| -------------- | --- |
-| Student Names: |     |
-|                |     |
-|                |     |
-|                |     |
+| Group \#:       | 22  |
+|-----------------|---|
+| Student Names:  |  Angelo Gonzales |
+|                 |  Dave Sharma |
+|                 |  Jaron Baldazo |
+|                 |  Manjot Singh |
 
 # 1 Introduction
 
