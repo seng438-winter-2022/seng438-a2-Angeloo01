@@ -52,8 +52,10 @@ Team work was divided equally, as all team members worked together one each part
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-Text…
+The main difficulty that we found during the assignment was during the Mock testings of DataUtilities. Issues with the hamcrest package not being recognized prevented us from doing the Mock testings of DataUtilities.
+
+The main lessons that our group learned throughout this assignment was the key differences between the Black Box Testing types.
 
 # 6 Comments/feedback on the lab itself
 
-Text…
+The assignment handout was very easy to follow as it tells us step by step on how to familiarize ourselves with JUnit and JFreeChart. This assignment was also useful in enforcing our understanding with the different types of Black Box testings.
