@@ -37,7 +37,7 @@ public class RangeTest {
     @Test
     public void getUpperBoundShouldBeOne() {
         //fail("Not yet implemented");
-    	assertEquals("The length should be 2",
+    	assertEquals("The upperbound should be 1",
     	        1, exampleRange.getUpperBound(), .000000001d);
     }
     
