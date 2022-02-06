@@ -42,7 +42,7 @@ public class RangeTest {
     }
     
     @Test
-    public void intersectsShouldBeTrue() {
+    public void intersectsShouldBeTrueALessThanLower() {
         //fail("Not yet implemented");
     	Range exampleRange2 = new Range(-2, 2);
     	
@@ -50,23 +50,53 @@ public class RangeTest {
     }
     
     @Test
-    public void intersectsShouldBeFalse() {
+    public void intersectsShouldBeFalseAGreaterThanUpper() {
         //fail("Not yet implemented");
     	Range exampleRange2 = new Range(3, 4);
     	
     	assertFalse(exampleRange.intersects(exampleRange2));
     }
+    
+    @Test
+    public void intersectsShouldBeTrueABetweenBounds() {
+        //fail("Not yet implemented");
+    	Range exampleRange2 = new Range(0, 4);
+    	
+    	assertTrue(exampleRange.intersects(exampleRange2));
+    }
+    
+    //BVT
+    @Test
+    public void intersectsShouldBeTrueAEqualLower() {
+        //fail("Not yet implemented");
+    	Range exampleRange2 = new Range(-1, 2);
+    	
+    	assertTrue(exampleRange.intersects(exampleRange2));
+    }
+    
+    @Test
+    public void intersectsShouldBeFalseAEqualUpper() {
+        //fail("Not yet implemented");
+    	Range exampleRange2 = new Range(1, 2);
+    	
+    	assertFalse(exampleRange.intersects(exampleRange2));
+    }
 //    
     @Test(expected = IllegalArgumentException.class)
-    public void isNaNRangeShouldBeFalseBothValidBounds() throws Exception {
+    public void rangeCtorLowerGreaterThanUpper() throws Exception {
         //fail("Not yet implemented");
     	Range exampleRange2 = new Range(4, 2);
     }
  
     @Test(expected = IllegalArgumentException.class)
-    public void isNaNRangeShouldBeFalseOneNaNBound() throws Exception{
+    public void rangeCtorInvalidArgument() throws Exception{
         //fail("Not yet implemented");
     	Range exampleRange2 = new Range('L',3);
+    }
+    
+    public void rangeCtorValidArgument() throws Exception{
+        //fail("Not yet implemented");
+    	Range exampleRange2 = new Range(1,3);
     }
     
 //    @Test
