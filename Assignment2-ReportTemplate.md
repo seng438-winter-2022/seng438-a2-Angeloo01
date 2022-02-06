@@ -30,7 +30,7 @@ you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-Text…
+Team work was divided equally, as all team members worked together one each part of the lab. Each member of the team went through the familirization of creating unit tests, and were responsiblle of creating and then following through with the test plan. As a team we went through the Javadocs of the JFreeChart system, and determined which methods and requirements we were gonna test for the test plan. Once the plan was created, members worked on creating unit tests, with an equal workload distributed to each. Finally, the lab report writeup, was split equally between members. Throughout the lab, each member was responsible for keeping each other accountable, and make sure that the work was done in time.
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
