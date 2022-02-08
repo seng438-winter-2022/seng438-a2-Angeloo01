@@ -81,7 +81,24 @@ public class RangeTest {
     	
     	assertTrue(exampleRange.intersects(exampleRange2));
     }
-//    
+    
+    //Robustness
+    @Test
+    public void intersectsShouldBeTrueABLB() {
+        //fail("Not yet implemented");
+    	Range exampleRange2 = new Range(-1.01, 2);
+    	
+    	assertTrue(exampleRange.intersects(exampleRange2));
+    }
+    
+    @Test
+    public void intersectsShouldBeFalseAAUB() {
+        //fail("Not yet implemented");
+    	Range exampleRange2 = new Range(1.01, 2);
+    	
+    	assertFalse(exampleRange.intersects(exampleRange2));
+    }
+    
     @Test(expected = IllegalArgumentException.class)
     public void rangeCtorLowerGreaterThanUpper() throws Exception {
         //fail("Not yet implemented");
@@ -94,17 +111,28 @@ public class RangeTest {
     	Range exampleRange2 = new Range('L',3);
     }
     
+    @Test
     public void rangeCtorValidArgument() throws Exception{
         //fail("Not yet implemented");
     	Range exampleRange2 = new Range(1,3);
     }
     
-//    @Test
-//    public void isNaNRangeShouldBeTrue(){
-//        //fail("Not yet implemented");
-//    	
-//    	
-//    }
+    //BVT
+    @Test
+    public void rangeCtorAEqualB() {
+    	Range exampleRange2 = new Range(1,1);
+    }
+    
+    //Robustness
+    @Test
+    public void rangeCtorABLB(){
+    	Range exampleRange2 = new Range(.9999,1);
+    }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void rangeCtorAAUB() throws Exception{
+    	Range exampleRange2 = new Range(1.1111,1);
+    }
 
     @After
     public void tearDown() throws Exception {
