@@ -38,6 +38,18 @@ The functions we chose to test from the Range class are and their equvalence cla
    - a < b
    - a >= b
 
+The functions we are testing from the DataUtilities class are:
+ - calculateColumnTotal()
+  - non-null and null Values2D argument
+ - calculateRowTotal()
+  - non-null and null Values2D argument
+ - createNumberArray()
+  - non-null and null double array argument
+ - createNumberArray2D()
+  - non-null and null double 2d array argument
+ - getCumulativePercentages()
+  - non-null and null KeyedValues argument
+
 # 3 Test cases developed
 
 Text…
