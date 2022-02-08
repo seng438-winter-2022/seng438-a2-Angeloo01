@@ -51,6 +51,35 @@ The functions we are testing from the DataUtilities class are:
    - non-null and null KeyedValues argument
 
 # 3 Test cases developed
+ - Testing: getLength()
+   - getLengthShouldBeTwo()
+     - weak equivalence class
+
+ - Testing: getLowerBound()
+   - getLowerBoundShouldBeNegOne()
+ 
+ - Testing: getUpperBound()
+   - getUpperBoundShouldBeOne()
+   
+| Method to be Tested | Testing Method Name | Type of Test |
+|-------------------- | --- | --- |
+| getLength() | getLengthShouldBeTwo() |
+| getLowerBound() | getLowerBoundShouldBeNegOne() |    
+| getUpperBound() | getUpperBoundShouldBeOne() |
+| intersects(double a, double b) | intersectsShouldBeTrueALessThanLower() |
+| intersects(double a, double b) | intersectsShouldBeFalseAGreaterThanUpper() |
+| intersects(double a, double b) | intersectsShouldBeTrueABetweenBounds() |
+| intersects(double a, double b) | intersectsShouldBeTrueAEqualLower() |
+| intersects(double a, double b) | intersectsShouldBeTrueAEqualUpper() |
+| intersects(double a, double b) | intersectsShouldBeTrueABLB() |
+| intersects(double a, double b) | intersectsShouldBeFalseAAUB() |
+| Range(double a, double b) | rangeCtorLowerGreaterThanUpper() |
+| Range(double a, double b) | rangeCtorInvalidArgument() |
+| Range(double a, double b) | rangeCtorValidArgument() |
+| Range(double a, double b) | rangeCtorAEqualB() |
+| Range(double a, double b) | rangeCtorABLB() |
+| Range(double a, double b) | rangeCtorAAUB() |
+
 
 Text…
 
