@@ -11,7 +11,7 @@
 
 # 1 Introduction
 
-Text…
+The purpose of this lab is to intorduce us to the concepts of automated unit testing. In this lab we will be tasked with creating unit test using the primary testing tool in Java, being the JUnit framework. We will be using the JUnit framework, to test the system JFreeChart. In order to test the system, units tests will be created based in requirements found in the Javadocs for the JFreeChart software. Certain aspects of the JFreeChart system that we will be testing, will require the development and use of mock objects in order to simulate features of objects that are hard to reproduce in our unit tests.
 
 # 2 Detailed description of unit test strategy
 
@@ -21,22 +21,22 @@ To apply these testing methods, we are going to implement unit tests using JUnit
 
 The functions we chose to test from the Range class are and their equvalence classes:
  - getLength()
-  - Range object with valid doubles as bounds.
+   - Range object with valid doubles as bounds.
   
  - getLowerBound()
-  - Range object with valid doubles as bounds.
+   - Range object with valid doubles as bounds.
   
  - getUpperBound()
-  - Range object with valid doubles as bounds.
+   - Range object with valid doubles as bounds.
   
  - intersects(double a, double b)
-  - Range object with valid doubles as bounds.
-  - a < lower bound, lower bound <= a <= upper bound, a > upper bound
-  - b < lower bound, lower bound <= b <= upper bound, b > upper bound
+   - Range object with valid doubles as bounds.
+   - a < lower bound, lower bound <= a <= upper bound, a > upper bound
+   - b < lower bound, lower bound <= b <= upper bound, b > upper bound
   
  - Range(double a, double b)
-  - a < b
-  - a >= b
+   - a < b
+   - a >= b
 
 # 3 Test cases developed
 
@@ -48,12 +48,14 @@ you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-Text…
+Team work was divided equally, as all team members worked together one each part of the lab. Each member of the team went through the familirization of creating unit tests, and were responsiblle of creating and then following through with the test plan. As a team we went through the Javadocs of the JFreeChart system, and determined which methods and requirements we were gonna test for the test plan. Once the plan was created, members worked on creating unit tests, with an equal workload distributed to each. Finally, the lab report writeup, was split equally between members. Throughout the lab, each member was responsible for keeping each other accountable, and make sure that the work was done in time.
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-Text…
+The main difficulty that we found during the assignment was during the Mock testings of DataUtilities. Issues with the hamcrest package not being recognized prevented us from doing the Mock testings of DataUtilities.
+
+The main lessons that our group learned throughout this assignment was the key differences between the Black Box Testing types.
 
 # 6 Comments/feedback on the lab itself
 
-Text…
+The assignment handout was very easy to follow as it tells us step by step on how to familiarize ourselves with JUnit and JFreeChart. This assignment was also useful in enforcing our understanding with the different types of Black Box testings.
