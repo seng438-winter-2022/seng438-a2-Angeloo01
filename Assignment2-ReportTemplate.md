@@ -70,4 +70,4 @@ The main lessons that our group learned throughout this assignment was the key d
 
 # 6 Comments/feedback on the lab itself
 
-The assignment handout was very easy to follow as it tells us step by step on how to familiarize ourselves with JUnit and JFreeChart. This assignment was also useful in enforcing our understanding with the different types of Black Box testings. We were able to understand the usefulness of writing Black Box testing, through the use of JMock and JUnit 4.
+The assignment handout was very easy to follow as it tells us step by step on how to familiarize ourselves with JUnit and JFreeChart. This assignment was also useful in enforcing our understanding with the different types of Black Box testings. We were able to understand the usefulness of writing Black Box testing, through the use of JMock and JUnit 4. Minor inconveniences that we found during the assignment includes downloading the Assignment 2 Artifacts from D2L rather than the github and the hamcrest package not being recognized.
