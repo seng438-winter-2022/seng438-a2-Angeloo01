@@ -51,41 +51,46 @@ The functions we are testing from the DataUtilities class are:
    - non-null and null KeyedValues argument
 
 # 3 Test cases developed
- - Testing: getLength()
-   - getLengthShouldBeTwo()
-     - weak equivalence class
 
- - Testing: getLowerBound()
-   - getLowerBoundShouldBeNegOne()
- 
- - Testing: getUpperBound()
-   - getUpperBoundShouldBeOne()
-   
+Range: 
 | Method to be Tested | Testing Method Name | Type of Test |
 |-------------------- | --- | --- |
-| getLength() | getLengthShouldBeTwo() |
-| getLowerBound() | getLowerBoundShouldBeNegOne() |    
-| getUpperBound() | getUpperBoundShouldBeOne() |
-| intersects(double a, double b) | intersectsShouldBeTrueALessThanLower() |
-| intersects(double a, double b) | intersectsShouldBeFalseAGreaterThanUpper() |
-| intersects(double a, double b) | intersectsShouldBeTrueABetweenBounds() |
-| intersects(double a, double b) | intersectsShouldBeTrueAEqualLower() |
-| intersects(double a, double b) | intersectsShouldBeTrueAEqualUpper() |
-| intersects(double a, double b) | intersectsShouldBeTrueABLB() |
-| intersects(double a, double b) | intersectsShouldBeFalseAAUB() |
-| Range(double a, double b) | rangeCtorLowerGreaterThanUpper() |
-| Range(double a, double b) | rangeCtorInvalidArgument() |
-| Range(double a, double b) | rangeCtorValidArgument() |
-| Range(double a, double b) | rangeCtorAEqualB() |
-| Range(double a, double b) | rangeCtorABLB() |
-| Range(double a, double b) | rangeCtorAAUB() |
+| getLength() | getLengthShouldBeTwo() | weak ECT
+| getLowerBound() | getLowerBoundShouldBeNegOne() | weak ECT
+| getUpperBound() | getUpperBoundShouldBeOne() | weak ECT
+| intersects(double a, double b) | intersectsShouldBeTrueALessThanLower() | BVT
+| intersects(double a, double b) | intersectsShouldBeFalseAGreaterThanUpper() | BVT
+| intersects(double a, double b) | intersectsShouldBeTrueABetweenBounds() | weak ECT
+| intersects(double a, double b) | intersectsShouldBeTrueAEqualLower() | BVT
+| intersects(double a, double b) | intersectsShouldBeTrueAEqualUpper() | BVT
+| intersects(double a, double b) | intersectsShouldBeTrueABLB() | Robust
+| intersects(double a, double b) | intersectsShouldBeFalseAAUB() | Robust
+| Range(double a, double b) | rangeCtorLowerGreaterThanUpper() | BVT
+| Range(double a, double b) | rangeCtorInvalidArgument() | weak ECT
+| Range(double a, double b) | rangeCtorValidArgument() | weak ECT
+| Range(double a, double b) | rangeCtorAEqualB() | BVT
+| Range(double a, double b) | rangeCtorABLB() | Robust
+| Range(double a, double b) | rangeCtorAAUB() | Robust
 
-
-Text…
-
-// write down the name of the test methods and classes. Organize the based on
-the source code method // they test. identify which tests cover which partitions
-you have explained in the test strategy section //above
+DataUtilities: 
+| Method to be Tested | Testing Method Name | Type of Test |
+|-------------------- | --- | --- |
+| calculateColumnTotal(Values2D data, int column) | calculateColumnTotalForTwoValues() | weak ECT
+| calculateColumnTotal(Values2D data, int column) | calculateColumnTotalForTwoRowsTwoColumns() | weak ECT
+| calculateColumnTotal(Values2D data, int column) | calculateColumnTotalNullArgument() | BVT
+| calculateRowTotal(Values2D data, int row) | calculateRowTotalForTwoValues() | weak ECT
+| calculateRowTotal(Values2D data, int row) | calculateRowTotalForTwoRowsTwoColumns() | weak ECT
+| calculateRowTotal(Values2D data, int row) | calculateRowTotalNullArgument() | BVT
+| createNumberArray(double[] data) | createNumberArrayTwoDoubleElements() | weak ECT
+| createNumberArray(double[] data) | createNumberArrayNullArgument() | BVT
+| createNumberArray2D(double[][] data) | createNumberArray2DTwoArrayOfTwoDoubleElements() | weak ECT
+| createNumberArray2D(double[][] data) | createNumberArray2DNullArgument() | BVT
+| equal(double[][] a, double[][] b) | equalTwoEqualArrays() | weak ECT
+| equal(double[][] a, double[][] b) | equalTwoUnequalArrays() | weak ECT
+| equal(double[][] a, double[][] b) |  public void equalOneWithInts() | weak ECT
+| getCumulativePercentages(KeyedValues data) | getCumulativePercentagesNullArgument() | BVT
+| getCumulativePercentages(KeyedValues data) | getCumulativePercentagesValidKeyedValues() | weak ECT
+| getCumulativePercentages(KeyedValues data) | getCumulativePercentagesEmptyList() | weak ECT
 
 # 4 How the team work/effort was divided and managed
 
