@@ -26,6 +26,7 @@ public class DataUtilitiesTest{
 	
 	 /**
 	 * test calculateColumnTotal() with one row of two valid values
+	 * expected: 10.0
 	 */
 	@Test
 	 public void calculateColumnTotalForTwoValues() {
@@ -51,6 +52,7 @@ public class DataUtilitiesTest{
 	 
 	/**
 	 * test calculateColumnTotal() with two rows of two valid values
+	 * expected: 2.0
 	 */
 	 @Test
 	 public void calculateColumnTotalForTwoRowsTwoColumns() {
@@ -80,7 +82,8 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 /**
-	  * Test calculateColumnTotal() with a null argument Expected: IllegalArgumentException
+	  * Test calculateColumnTotal() with a null argument 
+	  * Expected: IllegalArgumentException
 	 * @throws Exception
 	 */
 	@Test(expected = IllegalArgumentException.class)
@@ -90,6 +93,7 @@ public class DataUtilitiesTest{
 	 
 	/**
 	  * test calculateColumnTotal() with one row and two columns
+	  * expected: 10.0
 	  */
 	 @Test
 	 public void calculateRowTotalForTwoValues() {
@@ -115,6 +119,7 @@ public class DataUtilitiesTest{
 	 
 	 /**
 	  * test calculateColumnTotal() with two rows and two columns
+	  * expected: 3.5
 	  */
 	 @Test
 	 public void calculateRowTotalForTwoRowsTwoColumns() {
@@ -144,7 +149,8 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 /**
-	  * Test calculateRowTotal() with a null argument Expected: IllegalArgumentException
+	  * Test calculateRowTotal() with a null argument 
+	  * Expected: IllegalArgumentException
 	 * @throws Exception
 	 */
 	 @Test(expected = IllegalArgumentException.class)
@@ -154,6 +160,7 @@ public class DataUtilitiesTest{
 	 
 	 /**
 	 * Test createNumberArray() with a valid double array
+	 * expected: {1.0, 2.0}
 	 */
 	@Test
 	 public void createNumberArrayTwoDoubleElements() {
@@ -162,7 +169,8 @@ public class DataUtilitiesTest{
 	 }
 	 
 	/**
-	  * Test createNumberArray() with a null argument Expected: IllegalArgumentException
+	  * Test createNumberArray() with a null argument 
+	  * Expected: IllegalArgumentException
 	 * @throws Exception
 	 */
 	 @Test(expected = IllegalArgumentException.class)
@@ -172,6 +180,7 @@ public class DataUtilitiesTest{
 	 
 	 /**
 		 * Test createNumberArray2D() with a valid 2d double array
+		 * expected: {{1.0, 3.0}, {2.0, 4.0}}
 		 */
 	 @Test
 	 public void createNumberArray2DTwoArrayOfTwoDoubleElements() {
@@ -180,7 +189,8 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 /**
-	  * Test createNumberArray2D() with a null argument Expected: IllegalArgumentException
+	  * Test createNumberArray2D() with a null argument 
+	  * Expected: IllegalArgumentException
 	 * @throws Exception
 	 */
 	 @Test(expected = IllegalArgumentException.class)
@@ -190,6 +200,7 @@ public class DataUtilitiesTest{
 	 
 	 /**
 	 * test equal() with two equal arrays of doubles
+	 * expected: true
 	 */
 	@Test
 	 public void equalTwoEqualArrays() {
@@ -198,6 +209,7 @@ public class DataUtilitiesTest{
 	 
 	/**
 	 * test equal() with two unequal arrays of doubles
+	 * expected: false
 	 */
 	 @Test
 	 public void equalTwoUnequalArrays() {
@@ -206,6 +218,7 @@ public class DataUtilitiesTest{
 	 
 	 /**
 	  * test equal() with one int array and one double array with equal values
+	  * expected: true
 	  */
 	 @Test
 	 public void equalOneWithInts() {
@@ -213,7 +226,8 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 /**
-	  * Test getCumulativePercentages() with a null argument Expected: IllegalArgumentException
+	  * Test getCumulativePercentages() with a null argument 
+	  * Expected: IllegalArgumentException
 	 * @throws Exception
 	 */
 	 @Test (expected = IllegalArgumentException.class)
@@ -224,6 +238,7 @@ public class DataUtilitiesTest{
 	 
 	 /**
 	 * test getCumulativePercentages() with a mock KeyedValue object. Check value of element 0
+	 * expected: 0.16666666666666666
 	 */
 	@Test
 	 public void getCumulativePercentagesValidKeyedValuesElement0(){
@@ -260,6 +275,7 @@ public class DataUtilitiesTest{
 	
 	/**
 	 * test getCumulativePercentages() with a mock KeyedValue object. Check value of element 1
+	 * expected: 0.5
 	 */
 	 @Test
 	 public void getCumulativePercentagesValidKeyedValuesElement1(){
@@ -296,6 +312,7 @@ public class DataUtilitiesTest{
 	 
 	 /**
 		 * test getCumulativePercentages() with a mock KeyedValue object. Check value of element 2
+		 * expected: 1.0
 		 */
 	 @Test
 	 public void getCumulativePercentagesValidKeyedValuesElement2(){
@@ -332,7 +349,7 @@ public class DataUtilitiesTest{
 	 
 	 /**
 	  * Test getCumulativePercentages() with a an empty KeyedValue object
-	 * @throws Exception
+	 * expected: pass
 	 */
 	 @Test
 	 public void getCumulativePercentagesEmptyList() {
