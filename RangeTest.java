@@ -13,34 +13,40 @@ public class RangeTest {
     @Before
     public void setUp() throws Exception { exampleRange = new Range(-1, 1);
     }
-
+    
+    //This test will ascertain that the central value in the range is outputted correctly. 
+    //In our example range central value is zero, thus we will check if it is true.
 
     @Test
     public void centralValueShouldBeZero() {
         assertEquals("The central value of -1 and 1 should be 0",
         0, exampleRange.getCentralValue(), .000000001d);
     }
-    
+    //This test will ascertain that the length of the range is outputted correctly. 
+    //In our example range length is 2, thus we will check if it is true.
     @Test
     public void getLengthShouldBeTwo() {
        // fail("Not yet implemented");
     	assertEquals("The length should be 2",
     	        2, exampleRange.getLength(), .000000001d);
     }
-    
+    //This test will ascertain that the lower bound in the range is outputted correctly. 
+    //In our example range central value is -1, thus we will check if it is true.
     @Test
     public void getLowerBoundShouldBeNegOne() {
         //fail("Not yet implemented");
     	assertEquals("The lower bound should be -1",-1,exampleRange.getLowerBound(), .000000001d);
     }
-    
+    //This test will ascertain that the upper bound in the range is outputted correctly. 
+    //In our example range central value is 1, thus we will check if it is true.
     @Test
     public void getUpperBoundShouldBeOne() {
         //fail("Not yet implemented");
     	assertEquals("The upperbound should be 1",
     	        1, exampleRange.getUpperBound(), .000000001d);
     }
-    
+    //This test will ascertain that the intersects() function is working. 
+    //Our two ranges should intersect in this test, thus we will check if it is true.
     @Test
     public void intersectsShouldBeTrueALessThanLower() {
         //fail("Not yet implemented");
@@ -48,7 +54,8 @@ public class RangeTest {
     	
     	assertTrue(exampleRange.intersects(exampleRange2));
     }
-    
+     //This test will ascertain that the intersects() function is working. 
+    //Our two ranges should not intersect in this test, thus we will check if it is true.
     @Test
     public void intersectsShouldBeFalseAGreaterThanUpper() {
         //fail("Not yet implemented");
