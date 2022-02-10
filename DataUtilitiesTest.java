@@ -13,6 +13,10 @@ public class DataUtilitiesTest{
 	private Mockery mockingContext;
 	private Values2D values;
 	private KeyedValues keyValues;
+	
+	/**Setup the mock objects and mocking context
+	 * @throws Exception
+	 */
 	@Before
     public void setUp() throws Exception { 
 		mockingContext = new Mockery();
@@ -20,7 +24,10 @@ public class DataUtilitiesTest{
 		keyValues = mockingContext.mock(KeyedValues.class);
     }
 	
-	 @Test
+	 /**
+	 * test calculateColumnTotal() with one row of two valid values
+	 */
+	@Test
 	 public void calculateColumnTotalForTwoValues() {
 	     // setup
 	     mockingContext.checking(new Expectations() {
@@ -42,6 +49,9 @@ public class DataUtilitiesTest{
 	     // tear-down: NONE in this test method
 	 }
 	 
+	/**
+	 * test calculateColumnTotal() with two rows of two valid values
+	 */
 	 @Test
 	 public void calculateColumnTotalForTwoRowsTwoColumns() {
 	     // setup
@@ -69,11 +79,18 @@ public class DataUtilitiesTest{
 	     assertEquals(2, result, .000000001d);
 	 }
 	 
-	 @Test(expected = IllegalArgumentException.class)
+	 /**
+	  * Test calculateColumnTotal() with a null argument Expected: IllegalArgumentException
+	 * @throws Exception
+	 */
+	@Test(expected = IllegalArgumentException.class)
 	 public void calculateColumnTotalNullArgument() throws Exception{
 		 DataUtilities.calculateColumnTotal(null, 0);
 	 }
 	 
+	/**
+	  * test calculateColumnTotal() with one row and two columns
+	  */
 	 @Test
 	 public void calculateRowTotalForTwoValues() {
 	     // setup
@@ -96,6 +113,9 @@ public class DataUtilitiesTest{
 	     // tear-down: NONE in this test method
 	 }
 	 
+	 /**
+	  * test calculateColumnTotal() with two rows and two columns
+	  */
 	 @Test
 	 public void calculateRowTotalForTwoRowsTwoColumns() {
 	     // setup
@@ -123,55 +143,90 @@ public class DataUtilitiesTest{
 	     assertEquals(3.5, result, .000000001d);
 	 }
 	 
+	 /**
+	  * Test calculateRowTotal() with a null argument Expected: IllegalArgumentException
+	 * @throws Exception
+	 */
 	 @Test(expected = IllegalArgumentException.class)
 	 public void calculateRowTotalNullArgument() throws Exception{
 		 DataUtilities.calculateRowTotal(null, 0);
 	 }
 	 
-	 @Test
+	 /**
+	 * Test createNumberArray() with a valid double array
+	 */
+	@Test
 	 public void createNumberArrayTwoDoubleElements() {
 		 Number[] numberArr = DataUtilities.createNumberArray(new double[]{1.0, 2.0});
 		 assertArrayEquals("Error at two double elements for createNumberArray()", new Number[] {1.0, 2.0}, numberArr);
 	 }
 	 
+	/**
+	  * Test createNumberArray() with a null argument Expected: IllegalArgumentException
+	 * @throws Exception
+	 */
 	 @Test(expected = IllegalArgumentException.class)
 	 public void createNumberArrayNullArgument() throws Exception{
 		 DataUtilities.createNumberArray(null);
 	 }
 	 
+	 /**
+		 * Test createNumberArray2D() with a valid 2d double array
+		 */
 	 @Test
 	 public void createNumberArray2DTwoArrayOfTwoDoubleElements() {
 		 Number[][] numberArr = DataUtilities.createNumberArray2D(new double[][]{{1.0, 3.0}, {2.0, 4.0}});
 		 assertArrayEquals("Error at two double elements for createNumberArray()", new Number[][] {{1.0, 3.0}, {2.0, 4.0}}, numberArr);
 	 }
 	 
+	 /**
+	  * Test createNumberArray2D() with a null argument Expected: IllegalArgumentException
+	 * @throws Exception
+	 */
 	 @Test(expected = IllegalArgumentException.class)
 	 public void createNumberArray2DNullArgument() throws Exception{
 		 DataUtilities.createNumberArray2D(null);
 	 }
 	 
-	 @Test
+	 /**
+	 * test equal() with two equal arrays of doubles
+	 */
+	@Test
 	 public void equalTwoEqualArrays() {
 		 assertTrue("Error at equal() with 2 equal arrays", DataUtilities.equal(new double[][]{{1.0, 3.0}, {2.0, 4.0}}, new double[][]{{1.0, 3.0}, {2.0, 4.0}}));
 	 }
 	 
+	/**
+	 * test equal() with two unequal arrays of doubles
+	 */
 	 @Test
 	 public void equalTwoUnequalArrays() {
 		 assertFalse("Error at equal() with 2 equal arrays", DataUtilities.equal(new double[][]{{1.0, 3.0}, {2.0, 1.0}}, new double[][]{{1.0, 3.0}, {2.0, 4.0}}));
 	 }
 	 
+	 /**
+	  * test equal() with one int array and one double array with equal values
+	  */
 	 @Test
 	 public void equalOneWithInts() {
 		 assertTrue("Error at equal() with 2 equal arrays", DataUtilities.equal(new double[][]{{1, 3}, {2, 4}}, new double[][]{{1.0, 3.0}, {2.0, 4.0}}));
 	 }
 	 
+	 /**
+	  * Test getCumulativePercentages() with a null argument Expected: IllegalArgumentException
+	 * @throws Exception
+	 */
 	 @Test (expected = IllegalArgumentException.class)
 	 public void getCumulativePercentagesNullArgument() throws Exception{
 		 DataUtilities.getCumulativePercentages(null);
 	 }
 	 
-	 @Test
-	 public void getCumulativePercentagesValidKeyedValues(){
+	 
+	 /**
+	 * test getCumulativePercentages() with a mock KeyedValue object. Check value of element 0
+	 */
+	@Test
+	 public void getCumulativePercentagesValidKeyedValuesElement0(){
 		 mockingContext.checking(new Expectations() {
 			{
 				atLeast(1).of(keyValues).getItemCount();
@@ -199,10 +254,86 @@ public class DataUtilitiesTest{
 		 
 		 KeyedValues result = DataUtilities.getCumulativePercentages(keyValues);
 		 assertEquals(0.16666666666666666, result.getValue(0).doubleValue(), .000000001d);
+		 //assertEquals(0.5, result.getValue(1).doubleValue(), .000000001d);
+		 //assertEquals(1.0, result.getValue(2).doubleValue(), .000000001d);
+	 }
+	
+	/**
+	 * test getCumulativePercentages() with a mock KeyedValue object. Check value of element 1
+	 */
+	 @Test
+	 public void getCumulativePercentagesValidKeyedValuesElement1(){
+		 mockingContext.checking(new Expectations() {
+			{
+				atLeast(1).of(keyValues).getItemCount();
+				will(returnValue(3));
+	        	
+				atLeast(1).of(keyValues).getValue(0);
+				will(returnValue(1));
+				
+				atLeast(1).of(keyValues).getValue(1);
+				will(returnValue(2));
+				
+				atLeast(1).of(keyValues).getValue(2);
+				will(returnValue(3));
+				
+				atLeast(1).of(keyValues).getKey(0);
+				will(returnValue("key0"));
+				
+				atLeast(1).of(keyValues).getKey(1);
+				will(returnValue("key1"));
+				
+				atLeast(1).of(keyValues).getKey(2);
+				will(returnValue("key2"));
+	     	}
+		 });
+		 
+		 KeyedValues result = DataUtilities.getCumulativePercentages(keyValues);
+		 //assertEquals(0.16666666666666666, result.getValue(0).doubleValue(), .000000001d);
 		 assertEquals(0.5, result.getValue(1).doubleValue(), .000000001d);
+		 //assertEquals(1.0, result.getValue(2).doubleValue(), .000000001d);
+	 }
+	 
+	 /**
+		 * test getCumulativePercentages() with a mock KeyedValue object. Check value of element 2
+		 */
+	 @Test
+	 public void getCumulativePercentagesValidKeyedValuesElement2(){
+		 mockingContext.checking(new Expectations() {
+			{
+				atLeast(1).of(keyValues).getItemCount();
+				will(returnValue(3));
+	        	
+				atLeast(1).of(keyValues).getValue(0);
+				will(returnValue(1));
+				
+				atLeast(1).of(keyValues).getValue(1);
+				will(returnValue(2));
+				
+				atLeast(1).of(keyValues).getValue(2);
+				will(returnValue(3));
+				
+				atLeast(1).of(keyValues).getKey(0);
+				will(returnValue("key0"));
+				
+				atLeast(1).of(keyValues).getKey(1);
+				will(returnValue("key1"));
+				
+				atLeast(1).of(keyValues).getKey(2);
+				will(returnValue("key2"));
+	     	}
+		 });
+		 
+		 KeyedValues result = DataUtilities.getCumulativePercentages(keyValues);
+		 //assertEquals(0.16666666666666666, result.getValue(0).doubleValue(), .000000001d);
+		 //assertEquals(0.5, result.getValue(1).doubleValue(), .000000001d);
 		 assertEquals(1.0, result.getValue(2).doubleValue(), .000000001d);
 	 }
 	 
+	 /**
+	  * Test getCumulativePercentages() with a an empty KeyedValue object
+	 * @throws Exception
+	 */
 	 @Test
 	 public void getCumulativePercentagesEmptyList() {
 		 mockingContext.checking(new Expectations() {
